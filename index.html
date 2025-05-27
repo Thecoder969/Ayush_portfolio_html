@@ -9,97 +9,166 @@
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f0f4ff;
       color: #333;
+      scroll-behavior: smooth;
     }
+
     header {
-      background-color: #1a1a1a;
+      background: linear-gradient(135deg, #4B0082, #00BFFF);
       color: #fff;
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
+
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 3em;
+      font-weight: 600;
     }
+
     header p {
-      margin-top: 10px;
-      font-size: 1.2em;
+      margin-top: 15px;
+      font-size: 1.3em;
     }
+
+    .resume-button {
+      margin-top: 20px;
+    }
+
+    .resume-button a {
+      background: #fff;
+      color: #4B0082;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .resume-button a:hover {
+      background: #00BFFF;
+      color: #fff;
+    }
+
     nav {
       background-color: #333;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      flex-wrap: wrap;
+      padding: 12px 0;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
-      margin: 0 15px;
-      padding: 8px 12px;
-      transition: background-color 0.3s;
-    }
-    nav a:hover {
-      background-color: #555;
+      margin: 0 20px;
+      padding: 10px 16px;
       border-radius: 4px;
+      transition: background-color 0.3s ease;
     }
+
+    nav a:hover {
+      background-color: #00BFFF;
+    }
+
     .container {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 50px auto;
       padding: 0 20px;
     }
-    section {
-      margin-bottom: 60px;
-    }
+
     .section-title {
-      font-size: 2em;
+      font-size: 2.2em;
       margin-bottom: 20px;
-      border-bottom: 2px solid #e0e0e0;
+      border-bottom: 3px solid #00BFFF;
       padding-bottom: 10px;
+      color: #4B0082;
     }
+
     .about p {
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 1.1em;
     }
+
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
     }
+
     .project-card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #ffffff;
+      border-left: 5px solid #4B0082;
+      border-radius: 10px;
       padding: 20px;
-      transition: transform 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    .project-card:hover {
-      transform: translateY(-5px);
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
+
     .project-card h3 {
+      color: #4B0082;
       margin-top: 0;
     }
-    .contact-info {
-      line-height: 1.8;
+
+    .contact-info p, .contact-info a {
+      font-size: 1.05em;
+      margin-bottom: 10px;
+      color: #4B0082;
     }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .contact-form button {
+      background-color: #4B0082;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .contact-form button:hover {
+      background-color: #00BFFF;
+    }
+
     footer {
-      background-color: #1a1a1a;
+      background-color: #4B0082;
       color: #fff;
       text-align: center;
       padding: 20px 0;
+      margin-top: 50px;
     }
+
     footer a {
-      color: #fff;
+      color: #00BFFF;
       text-decoration: underline;
     }
+
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2em;
+        font-size: 2.2em;
       }
       nav {
         flex-direction: column;
       }
       nav a {
-        margin: 5px 0;
+        margin: 8px 0;
       }
     }
   </style>
@@ -109,6 +178,9 @@
   <header>
     <h1>Ayush Dutta</h1>
     <p>Business Analyst | Data Scientist | Power BI Enthusiast</p>
+    <div class="resume-button">
+      <a href="resume/Ayush.pdf" target="_blank">📄 Download My Resume</a>
+    </div>
   </header>
 
   <nav>
@@ -121,7 +193,7 @@
     <section id="about" class="about">
       <h2 class="section-title">About Me</h2>
       <p>
-        I'm Ayush Dutta, a passionate Business Analyst and Data Scientist with a strong foundation in Computer Science and hands-on experience at Amazon. I specialize in transforming complex data into actionable insights, crafting intuitive dashboards, and leveraging tools like Power BI, Excel, and SQL to drive business decisions.
+        I'm Ayush Dutta, an MBA candidate in Business Analytics & Data Science. Skilled in Power BI, Excel, SQL, and Python, I transform data into insights. Former Amazon CSA, passionate about storytelling with data and business impact.
       </p>
     </section>
 
@@ -129,22 +201,16 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects">
         <div class="project-card">
-          <h3>World Happiness & Environment Dashboard</h3>
-          <p>
-            Developed a comprehensive Power BI dashboard analyzing global happiness scores in relation to environmental factors. Utilized Excel, Power Query, Power Pivot, and DAX for data processing and visualization.
-          </p>
+          <h3>🌍 World Happiness & Environment Dashboard</h3>
+          <p>Excel + Power BI dashboard correlating happiness scores and sustainability metrics across countries using Power Query and DAX.</p>
         </div>
         <div class="project-card">
-          <h3>Sales Performance Analysis</h3>
-          <p>
-            Conducted in-depth sales data analysis to identify key trends and performance metrics. Created interactive dashboards to assist stakeholders in strategic decision-making.
-          </p>
+          <h3>📊 Amazon Sales Dashboard</h3>
+          <p>Interactive Power BI dashboard showing category-wise sales performance, KPIs and regional analysis for Amazon India.</p>
         </div>
         <div class="project-card">
-          <h3>Customer Churn Prediction</h3>
-          <p>
-            Implemented machine learning models to predict customer churn, enabling proactive retention strategies and improving customer satisfaction rates.
-          </p>
+          <h3>🔍 Churn Prediction</h3>
+          <p>Built Python models to predict churn using classification algorithms and delivered retention insights with visual dashboards.</p>
         </div>
       </div>
     </section>
@@ -152,17 +218,38 @@
     <section id="contact">
       <h2 class="section-title">Contact</h2>
       <div class="contact-info">
-        <p><strong>Email:</strong> ayush.dutta@example.com</p>
+        <p><strong>Email:</strong> ayush.dutta24-26@bibs.co.in</p>
         <p><strong>Phone:</strong> +91-8100312383</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-dutta-9020b6323" target="_blank">linkedin.com/in/ayush-dutta-9020b6323</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-dutta-9020b6323" target="_blank">linkedin.com/in/ayush-dutta</a></p>
         <p><strong>GitHub:</strong> <a href="https://github.com/thecoder969" target="_blank">github.com/thecoder969</a></p>
       </div>
+
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top:10px;font-size:0.9em;color:#888;">(Note: Email functionality requires backend integration like Formspree, Google Forms, etc.)</p>
     </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 Ayush Dutta | <a href="https://www.linkedin.com/in/ayush-dutta-9020b6323" target="_blank">LinkedIn</a></p>
+    <p>&copy; 2025 Ayush Dutta | <a href="https://www.linkedin.com/in/ayush-dutta-9020b6323" target="_blank">Connect on LinkedIn</a></p>
   </footer>
 
+  <script>
+    // Scroll reveal animation
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
 </body>
 </html>
