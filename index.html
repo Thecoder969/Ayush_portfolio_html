@@ -2,91 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ayush Dutta | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
     }
-
     header {
-      background-color: #222;
+      background-color: #1a1a1a;
       color: #fff;
-      padding: 20px 0;
+      padding: 60px 20px;
       text-align: center;
     }
-
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
     nav {
       background-color: #333;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
     }
-
     nav a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 20px;
+      color: #fff;
       text-decoration: none;
+      margin: 0 15px;
+      padding: 8px 12px;
+      transition: background-color 0.3s;
     }
-
     nav a:hover {
-      background-color: #575757;
+      background-color: #555;
+      border-radius: 4px;
     }
-
     .container {
-      padding: 20px;
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-
-    .card {
-      background: #fff;
-      padding: 20px;
-      margin-top: 20px;
+    section {
+      margin-bottom: 60px;
+    }
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+    .about p {
+      line-height: 1.6;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background-color: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      padding: 20px;
+      transition: transform 0.3s;
     }
-
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .contact-info {
+      line-height: 1.8;
+    }
     footer {
-      background-color: #222;
+      background-color: #1a1a1a;
       color: #fff;
       text-align: center;
-      padding: 15px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      padding: 20px 0;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+      nav {
+        flex-direction: column;
+      }
+      nav a {
+        margin: 5px 0;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Welcome to Ayush Dutta's Portfolio</h1>
+    <h1>Ayush Dutta</h1>
     <p>Business Analyst | Data Scientist | Power BI Enthusiast</p>
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Projects</a>
-    <a href="#">Resume</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>I'm Ayush Dutta, a data science and business analytics enthusiast with a background in Computer Science and experience at Amazon. I specialize in building insightful dashboards and solving real-world problems with data.</p>
-    </div>
+    <section id="about" class="about">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        I'm Ayush Dutta, a passionate Business Analyst and Data Scientist with a strong foundation in Computer Science and hands-on experience at Amazon. I specialize in transforming complex data into actionable insights, crafting intuitive dashboards, and leveraging tools like Power BI, Excel, and SQL to drive business decisions.
+      </p>
+    </section>
 
-    <div class="card">
-      <h2>Featured Project</h2>
-      <p><strong>World Happiness & Environment Dashboard:</strong> A Power BI dashboard exploring happiness scores and environmental factors across countries. Used Excel, Power Query, Power Pivot, and DAX.</p>
-    </div>
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>World Happiness & Environment Dashboard</h3>
+          <p>
+            Developed a comprehensive Power BI dashboard analyzing global happiness scores in relation to environmental factors. Utilized Excel, Power Query, Power Pivot, and DAX for data processing and visualization.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>Sales Performance Analysis</h3>
+          <p>
+            Conducted in-depth sales data analysis to identify key trends and performance metrics. Created interactive dashboards to assist stakeholders in strategic decision-making.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>Customer Churn Prediction</h3>
+          <p>
+            Implemented machine learning models to predict customer churn, enabling proactive retention strategies and improving customer satisfaction rates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-info">
+        <p><strong>Email:</strong> ayush.dutta@example.com</p>
+        <p><strong>Phone:</strong> +91-8100312383</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayush-dutta-9020b6323" target="_blank">linkedin.com/in/ayush-dutta-9020b6323</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/thecoder969" target="_blank">github.com/thecoder969</a></p>
+      </div>
+    </section>
   </div>
 
   <footer>
-    <p>&copy; 2025 Ayush Dutta | <a href="https://www.linkedin.com/in/ayush-dutta" style="color: #ddd;">LinkedIn</a></p>
+    <p>&copy; 2025 Ayush Dutta | <a href="https://www.linkedin.com/in/ayush-dutta-9020b6323" target="_blank">LinkedIn</a></p>
   </footer>
+
 </body>
 </html>
